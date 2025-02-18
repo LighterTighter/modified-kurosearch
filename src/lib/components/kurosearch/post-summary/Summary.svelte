@@ -3,6 +3,7 @@
 	import RelativeTime from '../relative-time/RelativeTime.svelte';
 	import Score from '../score/Score.svelte';
 	import { formatCount } from '$lib/logic/format-count';
+	import Favorites from '../favorites/Favorites.svelte';
 
 	const dispatch = createEventDispatcher();
 
@@ -14,7 +15,9 @@
 <div class="summary">
 	<RelativeTime value={post.change} />
 	<span>•</span>
-	<Score value={post.score} />
+	<!-- <Score value={post.score} /> -->
+
+	<Favorites {post} />
 	<span class="divider" />
 	<button
 		type="button"

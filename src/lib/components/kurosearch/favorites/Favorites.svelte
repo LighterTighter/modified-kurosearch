@@ -3,15 +3,17 @@
 
 	import saveFavoritedToLocalStorage from '$lib/logic/save-favorited-to-local-storage';
 
-	export let post_url: kurosearch.Post;
-	console.log(`${POST: }${JSON.stringify(post_url)}`)
+	export let post: kurosearch.Post;
+	console.log('POST:');
+
+	const kurosearchUrl = new URL(
+		`https://kurosearch.com/post?id=${post.id}&src=${encodeURIComponent(post.file_url)}`
+	);
 </script>
 
-<span
-	data-testid="score"
-	class="codicon codicon-heart"
-	<!-- on:click={() => saveFavoritedToLocalStorage(post_url)} -->
-/>
+<span data-testid="score" class="codicon codicon-heart"
+	><textarea>{JSON.stringify(kurosearchUrl)}</textarea></span
+>
 
 <style>
 	span {

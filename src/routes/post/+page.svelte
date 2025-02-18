@@ -1,5 +1,6 @@
 <script>
 	import { browser } from '$app/environment';
+	import Favorites from '$lib/components/kurosearch/favorites/Favorites.svelte';
 	import Gif from '$lib/components/kurosearch/media-gif/Gif.svelte';
 	import Video from '$lib/components/kurosearch/media-video/Video.svelte';
 	import Comments from '$lib/components/kurosearch/post-comment/Comments.svelte';
@@ -60,7 +61,8 @@
 					<span>•</span>
 					<span>{post.type.toUpperCase()}</span>
 					<span>•</span>
-					<Score value={post.score} />
+					<Favorites {post} />
+					<!-- <Score value={post.score} /> -->
 					<span>•</span>
 					<RelativeTime value={post.change} />
 				</div>

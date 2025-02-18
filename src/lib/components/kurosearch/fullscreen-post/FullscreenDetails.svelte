@@ -1,4 +1,5 @@
 <script lang="ts">
+	import Favorites from '../favorites/Favorites.svelte';
 	import Comments from '../post-comment/Comments.svelte';
 	import Rating from '../rating/Rating.svelte';
 	import RelativeTime from '../relative-time/RelativeTime.svelte';
@@ -31,7 +32,9 @@
 		<span>•</span>
 		<span>{post.type.toUpperCase()}</span>
 		<span>•</span>
-		<Score value={post.score} />
+
+		<Favorites {post} />
+		<!-- <Score value={post.score} /> -->
 		<span>•</span>
 		<RelativeTime value={post.change} />
 	</div>
